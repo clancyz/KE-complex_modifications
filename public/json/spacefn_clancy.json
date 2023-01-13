@@ -263,7 +263,7 @@
       ]
     },
     {
-      "description": "SpaceFN: Space+period(.) to equal_sign(=), Space+slash to (>)",
+      "description": "SpaceFN: Space+period(.) to equal_sign(=), Space+slash to (>), Space+b to hyphen(-), Space+n to (+)",
       "manipulators": [
         {
           "type": "basic",
@@ -301,6 +301,55 @@
           "to": [
             {
               "key_code": "period",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "hyphen"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "equal_sign",
               "modifiers": [
                 "left_shift"
               ]
